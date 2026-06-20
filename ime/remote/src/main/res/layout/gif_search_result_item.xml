@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:layout_margin="2dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
@@ -10,8 +10,10 @@
     <ImageView
         android:id="@+id/gif_preview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/gif_search_title" />
+        android:background="#22808080"
+        android:contentDescription="@string/gif_search_title"
+        android:minHeight="96dp"
+        android:scaleType="fitCenter" />
 </FrameLayout>

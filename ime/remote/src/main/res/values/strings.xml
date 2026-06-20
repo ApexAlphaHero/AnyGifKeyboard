@@ -9,4 +9,16 @@
     <string name="gif_search_no_sources">No GIF sources configured. Add one in Settings → GIF sources.</string>
     <string name="gif_search_error">Something went wrong. Please try again.</string>
     <string name="gif_search_title">Search GIFs</string>
+    <string-array name="gif_quick_searches">
+        <item>Hi</item>
+        <item>Hugs</item>
+        <item>OK</item>
+        <item>Please</item>
+        <item>Thanks</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>LOL</item>
+        <item>Love</item>
+        <item>Wow</item>
+    </string-array>
 </resources>

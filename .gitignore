@@ -53,3 +53,6 @@ node_modules
 
 # personal scratch work area
 scratch/
+
+# claude worktrees (transient)
+.claude/worktrees/

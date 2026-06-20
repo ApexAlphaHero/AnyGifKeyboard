@@ -99,6 +99,27 @@ public abstract class AnySoftKeyboardMediaInsertion extends AnySoftKeyboardHardw
     return mSupportedMediaTypesUnmodifiable;
   }
 
+  /**
+   * Commits a locally-cached GIF Uri straight into the editor, reusing the same {@code
+   * commitContent} path as the remote media pipeline. Used by the in-keyboard GIF search panel.
+   */
+  protected void commitGifContent(android.net.Uri contentUri, String[] mimeTypes) {
+    final InputConnection inputConnection = getCurrentInputConnection();
+    final EditorInfo editorInfo = getCurrentInputEditorInfo();
+    if (inputConnection == null || editorInfo == null) return;
+
+    int flags = 0;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+      flags |= InputConnectionCompat.INPUT_CONTENT_GRANT_READ_URI_PERMISSION;
+    }
+    grantUriPermission(editorInfo.packageName, contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    final InputContentInfoCompat contentInfo =
+        new InputContentInfoCompat(contentUri, new ClipDescription("gif", mimeTypes), null);
+    final boolean committed =
+        commitMediaToInputConnection(contentInfo, inputConnection, editorInfo, flags);
+    Logger.i(TAG, "Committed in-keyboard GIF to input-connection. Result: %s", committed);
+  }
+
   private void onMediaInsertionReply(int requestId, InputContentInfoCompat inputContentInfo) {
     final InputConnection inputConnection = getCurrentInputConnection();
     final EditorInfo editorInfo = getCurrentInputEditorInfo();

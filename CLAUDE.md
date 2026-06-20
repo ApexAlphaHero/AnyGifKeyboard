@@ -17,9 +17,15 @@ Key facts for agents:
 - Use a GIPHY **API** key (plain REST), **not** the GIPHY Android SDK. The SDK is
   a heavy drop-in UI library that bypasses our pipeline and counts as a new
   third-party dependency — which needs approval per [AGENTS.md](AGENTS.md).
-- GIF insertion reuses the **existing media-insertion pipeline**; do not add
-  networking to the `InputMethodService`. New work lands in `:ime:remote`
-  (provider activity), `:ime:prefs` (settings), and strings/keys — the keyboard
-  service chain stays unchanged.
+- GIF search is an **inline keyboard panel** (`GifSearchPanelView`), shown in the
+  keyboard container like the emoji/quick-text panel — not a separate activity.
+  The chosen GIF is committed through the **existing `commitContent` media path**
+  (`AnySoftKeyboardMediaInsertion.commitGifContent`). The GIF panel **does network
+  I/O inside the IME process**, but always off the main thread (RxJava
+  background) — a deliberate exception to the usual "no networking in the IME"
+  rule, made so the experience matches Gboard.
+- Search/clients/config live in `:ime:remote` (`com.anysoftkeyboard.remote.gif`);
+  the panel view lives in `:ime:app` (`com.anysoftkeyboard.gif`); the sources list
+  settings screen is in `:ime:app` (`ui/settings/gifsources`).
 - Default to the **no-new-dependency** path (`HttpURLConnection` + `org.json`,
   platform `ImageDecoder`) unless dependency additions are explicitly approved.

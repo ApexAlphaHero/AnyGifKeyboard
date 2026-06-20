@@ -106,11 +106,20 @@ Target-app capability is detected in
 [AnySoftKeyboardMediaInsertion.onStartInputView()](ime/app/src/main/java/com/anysoftkeyboard/ime/AnySoftKeyboardMediaInsertion.java)
 via `EditorInfoCompat.getContentMimeTypes()` (`image/*`, `image/gif`).
 
-**The provider today** ([RemoteInsertionActivity.java](ime/remote/src/main/java/com/anysoftkeyboard/remote/RemoteInsertionActivity.java))
-just launches a generic `ACTION_PICK` image chooser. The GIF feature replaces
-that step with a giphery-backed (GIPHY-fallback) GIF search screen — the rest of
-the pipeline and the keyboard core are untouched. See
-[docs/gif-insertion.md](docs/gif-insertion.md).
+[RemoteInsertionActivity.java](ime/remote/src/main/java/com/anysoftkeyboard/remote/RemoteInsertionActivity.java)
+is the upstream provider, launching a generic `ACTION_PICK` image chooser; it is
+left unchanged.
+
+**The GIF feature does not use that provider.** Instead, the media key
+(`KeyCodes.IMAGE_MEDIA_POPUP`) is overridden in
+[AnySoftKeyboardWithQuickText.java](ime/app/src/main/java/com/anysoftkeyboard/ime/AnySoftKeyboardWithQuickText.java)
+to show an **inline GIF panel** ([GifSearchPanelView](ime/app/src/main/java/com/anysoftkeyboard/gif/GifSearchPanelView.java))
+docked in the keyboard container — exactly like the emoji panel. The panel
+searches the user's sources (networking off the main thread), downloads the
+chosen GIF to the app-private `media/` folder, and commits it via
+`AnySoftKeyboardMediaInsertion.commitGifContent()` → `commitContent()`. So GIF
+search reuses the *commit* end of the pipeline but bypasses the remote-provider
+hop. See [docs/gif-insertion.md](docs/gif-insertion.md).
 
 ## Add-on model (`/addons`)
 

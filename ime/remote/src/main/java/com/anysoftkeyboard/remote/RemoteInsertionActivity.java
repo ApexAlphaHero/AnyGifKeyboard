@@ -2,9 +2,9 @@ package com.anysoftkeyboard.remote;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import androidx.fragment.app.FragmentActivity;
 import com.anysoftkeyboard.api.MediaInsertion;
-import com.anysoftkeyboard.remote.gif.ui.GifSearchActivity;
 import java.util.Random;
 
 public class RemoteInsertionActivity extends FragmentActivity {
@@ -53,13 +53,14 @@ public class RemoteInsertionActivity extends FragmentActivity {
   }
 
   private void doPickIntent() {
-    // Launch the in-keyboard GIF search screen. It downloads the chosen GIF to an app-private
-    // file and returns a content:// Uri, which onActivityResult() broadcasts back into the
-    // existing media-insertion pipeline.
-    Intent gifSearchIntent = new Intent(this, GifSearchActivity.class);
-    gifSearchIntent.putExtra(
-        MediaInsertion.INTENT_MEDIA_INSERTION_REQUEST_MEDIA_MIMES_KEY, mRequestMimeTypes);
-    startActivityForResult(gifSearchIntent, mExternalAppRequestId);
+    Intent pickIntent = new Intent(Intent.ACTION_PICK);
+    pickIntent.setDataAndType(MediaStore.Images.Media.INTERNAL_CONTENT_URI, "image/*");
+    pickIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+    Intent chooserIntent =
+        Intent.createChooser(pickIntent, getText(R.string.media_pick_chooser_title));
+
+    startActivityForResult(chooserIntent, mExternalAppRequestId);
   }
 
   @Override

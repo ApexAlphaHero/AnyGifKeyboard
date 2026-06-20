@@ -26,53 +26,60 @@ open for more types later (e.g. Tenor) by adding a new `GifSource` impl.
 
 ## Why this design
 
-The keyboard **already** has a full rich-content insertion pipeline that
-delegates picking to an `Activity` answering a public intent and replying by
-broadcast (see [ARCHITECTURE.md](../ARCHITECTURE.md) → *Media-insertion
-pipeline*). GIF search slots into the **provider** step only:
+GIF search is an **inline keyboard panel** docked in the keyboard container —
+the same place the emoji/quick-text panel shows — so the experience matches
+Gboard (you never leave the keyboard). Tapping the media key
+(`KeyCodes.IMAGE_MEDIA_POPUP`) shows the panel; tapping a GIF commits it and
+returns to the keyboard.
 
-- **No keyboard-core changes.** `AnySoftKeyboardMediaInsertion`, `RemoteInsertionImpl`,
-  `LocalProxy`, and `commitContent()` already handle request → URI → insert.
-- **Networking stays out of the IME process** (an `Activity`, not the
-  `InputMethodService`), which avoids ANRs and keeps typing latency clean.
-- The provider activity today,
-  [RemoteInsertionActivity.java](../ime/remote/src/main/java/com/anysoftkeyboard/remote/RemoteInsertionActivity.java),
-  just calls `ACTION_PICK`. We swap that one screen for a GIF search screen.
+- **Reuses the commit path.** The chosen GIF is downloaded to the app-private
+  `media/` folder and committed via
+  `AnySoftKeyboardMediaInsertion.commitGifContent()` → `commitContent()` — the
+  same rich-content API the keyboard already used. The receiving app only needs
+  to advertise `image/gif` (the media button only appears when it does).
+- **Networking runs in the IME process.** Unlike most of the keyboard, the panel
+  does HTTP — but **always off the main thread** (RxJava `background`/`mainThread`
+  schedulers), so typing latency/ANRs are unaffected. This is a deliberate
+  exception to the usual "no networking in the `InputMethodService`" rule, taken
+  to get the inline Gboard-style UX. (An earlier iteration used a separate
+  full-screen activity to keep networking out of the IME; the inline panel
+  replaced it by request.)
+- **Upstream provider untouched.**
+  [RemoteInsertionActivity.java](../ime/remote/src/main/java/com/anysoftkeyboard/remote/RemoteInsertionActivity.java)
+  and the `INTENT_MEDIA_INSERTION_REQUEST_ACTION` infra are left as-is; the GIF
+  feature simply doesn't route through them.
 
 ## Scope of changes
 
-All work lands in **`:ime:remote`** (plus a settings screen in `:ime:prefs` and
-strings/keys). The keyboard service chain is unchanged.
+GIF search logic lives in **`:ime:remote`** (`com.anysoftkeyboard.remote.gif`);
+the panel view and settings screen live in **`:ime:app`**.
 
 ```
-ime/remote/src/main/java/com/anysoftkeyboard/remote/
-  RemoteInsertionActivity.java        (modified) launch GifSearchActivity instead of ACTION_PICK
-  gif/
-    GifSearchActivity.java            (new) search UI; returns a content:// Uri via the existing broadcast
-    GifSource.java                    (new) interface: search(query) -> List<GifResult>, download(result) -> File
-    GipheryGifSource.java             (new) giphery REST client
-    GiphyGifSource.java               (new) GIPHY HTTP API client
-    GifResult.java                    (new) {previewUrl, fullGifUrl, mimeType, width, height, id, sourceId}
-    GifRepository.java                (new) query enabled sources in priority order, first non-empty wins
-    config/
-      GifSourceConfig.java            (new) one configured source: id, type, label, enabled, position, + type fields
-      GifSourceType.java              (new) enum GIPHERY | GIPHY (extensible)
-      GifSourceConfigStore.java       (new) persist the ordered list as JSON; CRUD + reorder + enable/disable
-      GifSourceFactory.java           (new) GifSourceConfig -> GifSource instance
-    auth/GipheryTokenStore.java       (new) persist + refresh giphery JWTs (per giphery source)
+ime/remote/src/main/java/com/anysoftkeyboard/remote/gif/
+  GifSource.java            interface: search(query) -> List<GifResult>, download(url) -> bytes
+  GipheryGifSource.java     giphery REST client (bearer auth, refresh-on-401)
+  GiphyGifSource.java       GIPHY HTTP API client
+  GifResult.java            {id, previewUrl, fullGifUrl, mimeType, width, height, sourceId}
+  GifRepository.java        query enabled sources in priority order, first non-empty wins
+  GifSourceFactory.java     GifSourceConfig -> GifSource
+  GifCache.java             save downloaded bytes -> FileProvider content:// Uri
+  net/HttpTransport.java + UrlConnectionHttpTransport.java   injectable HTTP (testable)
+  ui/GifResultsAdapter.java + GifImageLoader.java            staggered grid + platform GIF decode
+  config/GifSourceConfig.java, GifSourceType.java, GifSourceConfigStore.java
+  auth/GipheryTokenStore.java                                refresh + persist giphery JWTs
 
-ime/prefs/src/main/java/.../gifsources/
-  GifSourcesFragment.java             (new) the reorderable list screen (RecyclerView + ItemTouchHelper)
-  GifSourcesAdapter.java              (new) row binding, drag handle, enable switch
-  GifSourceEditFragment.java          (new) add/edit one source (type-specific form)
+ime/app/src/main/java/com/anysoftkeyboard/
+  gif/GifSearchPanelView.java                 the inline panel (search box, chips, staggered grid)
+  ime/AnySoftKeyboardWithQuickText.java        (modified) handleMediaInsertionKey() -> show/cleanup panel
+  ime/AnySoftKeyboardMediaInsertion.java       (modified) commitGifContent(uri, mimeTypes)
+  ui/settings/gifsources/GifSourcesFragment.java + GifSourcesAdapter.java   reorderable sources list
 ```
 
-The provider already declares its intent-filter and a `FileProvider`
-([AndroidManifest.xml](../ime/remote/src/main/AndroidManifest.xml)); the new
-activity reuses both. Downloaded GIF bytes are written to the module's
-FileProvider cache, and the resulting `content://` Uri is handed back through
-`BROADCAST_INTENT_MEDIA_INSERTION_AVAILABLE_ACTION` exactly as today — so
-`LocalProxy` + `commitContent()` need no changes.
+The keyboard shows/removes the panel exactly like the emoji panel: hide the
+keyboard view, `addView` the panel into the `KeyboardViewContainerView`, and
+remove it on selection/close/finish-input. The `FileProvider` declared in
+[ime/remote AndroidManifest.xml](../ime/remote/src/main/AndroidManifest.xml)
+(authority = app id, path `media/`) serves the cached GIF Uri.
 
 ## giphery source
 

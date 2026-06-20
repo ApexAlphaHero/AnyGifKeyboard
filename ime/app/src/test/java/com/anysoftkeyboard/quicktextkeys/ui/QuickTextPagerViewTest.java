@@ -54,7 +54,6 @@ public class QuickTextPagerViewTest {
         context.getDrawable(R.drawable.sym_keyboard_delete_light),
         context.getDrawable(R.drawable.ic_action_settings),
         context.getDrawable(R.drawable.dark_background),
-        context.getDrawable(R.drawable.ic_media_insertion),
         context.getDrawable(R.drawable.ic_delete_forever_dark),
         10,
         Collections.singleton(MediaType.Image));
@@ -79,7 +78,6 @@ public class QuickTextPagerViewTest {
         context.getDrawable(R.drawable.sym_keyboard_delete_light),
         context.getDrawable(R.drawable.ic_action_settings),
         context.getDrawable(R.drawable.dark_background),
-        context.getDrawable(R.drawable.ic_media_insertion),
         context.getDrawable(R.drawable.ic_delete_forever_dark),
         10,
         Collections.singleton(MediaType.Image));
@@ -96,7 +94,6 @@ public class QuickTextPagerViewTest {
         context.getDrawable(R.drawable.sym_keyboard_delete_light),
         context.getDrawable(R.drawable.ic_action_settings),
         context.getDrawable(R.drawable.dark_background),
-        context.getDrawable(R.drawable.ic_media_insertion),
         context.getDrawable(R.drawable.ic_delete_forever_dark),
         10,
         Collections.emptySet());
@@ -208,7 +205,7 @@ public class QuickTextPagerViewTest {
                     .getDrawable())
             .getCreatedFromResId());
     Assert.assertEquals(
-        R.drawable.ic_media_insertion,
+        R.drawable.ic_quick_text_gif,
         Shadows.shadowOf(
                 ((ImageView) mUnderTest.findViewById(R.id.quick_keys_popup_quick_keys_insert_media))
                     .getDrawable())

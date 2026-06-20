@@ -969,4 +969,7 @@
     <string name="gif_source_refresh_token_hint">Refresh token</string>
     <string name="gif_source_api_key_hint">GIPHY API key</string>
     <string name="gif_source_api_key_help">Use a GIPHY API key (Create an App → API), not an SDK key.</string>
+    <string name="gif_panel_close">ABC</string>
+    <string name="gif_panel_tab_emoji">🙂</string>
+    <string name="gif_panel_tab_gif">GIF</string>
 </resources>

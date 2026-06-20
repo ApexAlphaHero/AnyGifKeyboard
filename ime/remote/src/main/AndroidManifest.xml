@@ -15,12 +15,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".gif.ui.GifSearchActivity"
-            android:exported="false"
-            android:label="@string/gif_search_title"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}"

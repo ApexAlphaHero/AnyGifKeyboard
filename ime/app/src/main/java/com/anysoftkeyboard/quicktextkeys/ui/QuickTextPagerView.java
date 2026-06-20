@@ -33,7 +33,6 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
   private Drawable mCloseKeyboardIcon;
   private Drawable mBackspaceIcon;
   private Drawable mSettingsIcon;
-  private Drawable mMediaInsertionDrawable;
   private Drawable mDeleteRecentlyUsedDrawable;
   private int mBottomPadding;
   private QuickKeyHistoryRecords mQuickKeyHistoryRecords;
@@ -78,7 +77,6 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
       Drawable backspaceIcon,
       Drawable settingsIcon,
       Drawable keyboardDrawable,
-      Drawable mediaInsertionDrawable,
       Drawable deleteRecentlyUsedDrawable,
       int bottomPadding,
       Set<MediaType> supportedMediaTypes) {
@@ -88,7 +86,6 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     mCloseKeyboardIcon = closeKeyboardIcon;
     mBackspaceIcon = backspaceIcon;
     mSettingsIcon = settingsIcon;
-    mMediaInsertionDrawable = mediaInsertionDrawable;
     mDeleteRecentlyUsedDrawable = deleteRecentlyUsedDrawable;
     mBottomPadding = bottomPadding;
     findViewById(R.id.quick_keys_popup_quick_keys_insert_media)
@@ -152,8 +149,11 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     // setting up icons from theme
     ((ImageView) findViewById(R.id.quick_keys_popup_close)).setImageDrawable(mCloseKeyboardIcon);
     ((ImageView) findViewById(R.id.quick_keys_popup_backspace)).setImageDrawable(mBackspaceIcon);
-    ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_insert_media))
-        .setImageDrawable(mMediaInsertionDrawable);
+    // Show a clear "GIF" glyph (tinted to the theme color) for the media/GIF insertion button.
+    final ImageView mediaInsertButton =
+        findViewById(R.id.quick_keys_popup_quick_keys_insert_media);
+    mediaInsertButton.setImageResource(R.drawable.ic_quick_text_gif);
+    mediaInsertButton.setImageTintList(mTabTitleTextColor);
     clearEmojiHistoryIcon.setImageDrawable(mDeleteRecentlyUsedDrawable);
     ((ImageView) findViewById(R.id.quick_keys_popup_quick_keys_settings))
         .setImageDrawable(mSettingsIcon);

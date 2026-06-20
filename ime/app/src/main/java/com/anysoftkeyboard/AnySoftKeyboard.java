@@ -690,6 +690,10 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardColorizeNavBar {
   @Override
   public void onKey(
       int primaryCode, Keyboard.Key key, int multiTapIndex, int[] nearByKeyCodes, boolean fromUI) {
+    // When the GIF search input bar is active, typing feeds the search query, not the editor.
+    if (handleGifSearchInputKey(primaryCode)) {
+      return;
+    }
     final InputConnection ic = getCurrentInputConnection();
     if (ic != null) ic.beginBatchEdit();
     super.onKey(primaryCode, key, multiTapIndex, nearByKeyCodes, fromUI);
