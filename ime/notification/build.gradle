@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir}/gradle/android_general.gradle"
+
+dependencies {
+
+    implementation project(path: ':ime:base')
+    implementation project(path: ':ime:permissions')
+    implementation libs.androidx.appcompat
+
+    testImplementation project(path: ':ime:base-test')
+}
+
+android {
+    namespace 'com.anysoftkeyboard.notification'
+}

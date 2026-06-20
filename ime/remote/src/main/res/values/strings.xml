@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+    <string name="media_pick_chooser_title">Pick image</string>
+    <string name="gif_search_box_hint">Search GIFs</string>
+    <string name="gif_search_prompt">Search for a GIF to insert.</string>
+    <string name="gif_search_searching">Searching…</string>
+    <string name="gif_search_inserting">Inserting GIF…</string>
+    <string name="gif_search_no_results">No GIFs found. Try another search.</string>
+    <string name="gif_search_no_sources">No GIF sources configured. Add one in Settings → GIF sources.</string>
+    <string name="gif_search_error">Something went wrong. Please try again.</string>
+    <string name="gif_search_title">Search GIFs</string>
+</resources>

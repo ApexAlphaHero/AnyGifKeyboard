@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tag slot used to guard recycled GIF preview image views against stale async loads. -->
+    <item name="gif_result_id_tag" type="id" />
+</resources>

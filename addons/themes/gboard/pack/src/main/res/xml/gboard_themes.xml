@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KeyboardThemes>
+    <KeyboardTheme
+        id="7c3d9e10-4d2b-11ef-9a3c-0800200c9a66"
+        nameResId="@string/gboard_keyboard_theme_name"
+        themeRes="@style/GboardAnyKeyboardTheme"
+        popupThemeRes="@style/GboardAnyKeyboardPopupTheme"
+        description="@string/gboard_keyboard_theme_description"
+        index="1"/>
+</KeyboardThemes>

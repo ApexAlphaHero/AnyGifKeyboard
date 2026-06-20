@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir}/gradle/android_general.gradle"
+
+dependencies {
+
+    implementation project(':ime:base')
+    implementation project(':ime:base-rx')
+    implementation project(':ime:pixel')
+    implementation project(':ime:fileprovider')
+    implementation project(':ime:prefs')
+    implementation libs.androidx.legacy.support.v13
+    implementation libs.androidx.fragment
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
+
+    testImplementation project(':ime:base-test')
+}
+
+android {
+    namespace 'com.anysoftkeyboard.remote'
+}

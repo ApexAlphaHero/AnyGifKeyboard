@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ask="http://schemas.android.com/apk/res-auto">
+
+    <!-- Functional keys (shift, backspace, ?123, symbols, ...). -->
+
+    <item ask:key_type_function="true" android:state_pressed="true"
+          android:drawable="@drawable/key_function_pressed" />
+    <item ask:key_type_function="true"
+          android:drawable="@drawable/key_function" />
+
+    <!-- Action key (enter). Gboard keeps it the same grey as the other
+         functional keys in this dark layout. -->
+
+    <item ask:key_type_action="true" android:state_pressed="true"
+          android:drawable="@drawable/key_function_pressed" />
+    <item ask:key_type_action="true"
+          android:drawable="@drawable/key_function" />
+
+    <!-- Toggle keys (shift / caps-lock). Use checkable/checked state. -->
+
+    <item android:state_checkable="true" android:state_checked="true" android:state_pressed="true"
+          android:drawable="@drawable/key_function_pressed" />
+    <item android:state_checkable="true" android:state_pressed="true"
+          android:drawable="@drawable/key_function_pressed" />
+    <item android:state_checkable="true" android:state_checked="true"
+          android:drawable="@drawable/key_checked" />
+    <item android:state_checkable="true"
+          android:drawable="@drawable/key_function" />
+
+    <!-- Normal (letter / number) keys. -->
+
+    <item android:state_pressed="true"
+          android:drawable="@drawable/key_normal_pressed" />
+    <item android:drawable="@drawable/key_normal" />
+</selector>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gboard_keyboard_theme_name">Gboard Dark</string>
+    <string name="gboard_keyboard_theme_description">A dark, rounded-key Material theme for AnySoftKeyboard inspired by the Gboard look</string>
+
+</resources>

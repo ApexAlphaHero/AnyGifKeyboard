@@ -1,0 +1,40 @@
+---
+name: "Run tests"
+author: "menny"
+description: "Runs tests using Gradle and sharding support"
+inputs:
+  index:
+    description: "zero-based index of the shard"
+  groups_count:
+    description: "count of groups"
+  module:
+    default: ""
+  extra_args:
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - uses: android-actions/setup-android@v3
+      with:
+        cmdline-tools-version: 13114758
+    - name: Install NDK
+      shell: bash
+      run: echo "y" | sdkmanager "ndk;29.0.14206865"
+    - shell: bash
+      env:
+        TERM: dumb
+        GRADLE_USER_HOME: ".github_cache_gradle/"
+        GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+      run: |
+        .github/actions/test-shard-run/run_tests.sh \
+          "${{ inputs.groups_count }}" \
+          "${{ inputs.index }}" \
+          "${{ inputs.module }}" \
+          "${{ inputs.extra_args }}"
+branding:
+  icon: 'activity'
+  color: 'yellow'

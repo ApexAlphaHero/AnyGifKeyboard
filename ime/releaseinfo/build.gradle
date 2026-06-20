@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir}/gradle/android_general.gradle"
+
+dependencies {
+
+    implementation project(path: ':ime:base')
+    implementation project(path: ':ime:notification')
+    implementation project(path: ':ime:prefs')
+    implementation project(path: ':ime:pixel')
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
+
+    testImplementation project(path: ':ime:base-test')
+    testImplementation libs.androidx.test.junit
+    testImplementation libs.androidx.fragment.testing
+}
+
+android {
+    namespace 'com.anysoftkeyboard.releaseinfo'
+}
