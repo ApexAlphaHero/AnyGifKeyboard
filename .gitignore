@@ -56,3 +56,6 @@ scratch/
 
 # claude worktrees (transient)
 .claude/worktrees/
+
+# kotlin build session caches
+.kotlin/
