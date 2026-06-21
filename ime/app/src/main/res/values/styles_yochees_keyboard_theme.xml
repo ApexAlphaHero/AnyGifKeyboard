@@ -101,7 +101,8 @@
         <item name="keySmallHeight">@dimen/default_key_half_height</item>
         <item name="keyLargeHeight">@dimen/default_key_tall_height</item>
 
-        <item name="hintTextSize">0px</item>
+        <!-- show the first long-press character as a hint at the top-right of each key -->
+        <item name="hintTextSize">@dimen/key_hint_text_size</item>
         <item name="hintTextColor">#FFBBBBBB</item>
         <!-- hint label positioning attributes -->
         <item name="hintLabelVAlign">top</item>
@@ -121,7 +122,8 @@
         <item name="keyPreviewBackground">@drawable/dark_btn_key_preview_background</item>
         <item name="keyPreviewTextColor">#FFFFFFFF</item>
         <item name="previewGestureTextColor">#B3B3B3</item>
-        <item name="hintTextSize">0px</item>
+        <!-- show the first long-press char as a hint at the top-right of each key -->
+        <item name="hintTextSize">@dimen/key_hint_text_size</item>
 
         <!-- suggestion strip -->
         <item name="suggestionNormalTextColor">#888</item>

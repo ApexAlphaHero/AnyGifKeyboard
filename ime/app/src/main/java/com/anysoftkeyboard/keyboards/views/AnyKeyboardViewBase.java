@@ -1325,14 +1325,10 @@ public class AnyKeyboardViewBase extends View implements InputViewBinder, Pointe
           if (Character.isLetterOrDigit(key.longPressCode)) {
             hintText = new String(new int[] {key.longPressCode}, 0, 1);
           }
-        } else if (key.popupCharacters != null) {
+        } else if (key.popupCharacters != null && key.popupCharacters.length() > 0) {
+          // show only the first long-press character as the on-key hint (Gboard style)
           final String hintString = key.popupCharacters.toString();
-          final int hintLength = Character.codePointCount(hintString, 0, hintString.length());
-          if (hintLength <= 3) {
-            hintText = hintString;
-          } else {
-            hintText = hintString.substring(0, Character.offsetByCodePoints(hintString, 0, 3));
-          }
+          hintText = new String(Character.toChars(hintString.codePointAt(0)));
         }
 
         if (mKeyboard.isShifted()) {

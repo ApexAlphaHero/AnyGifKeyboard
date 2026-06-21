@@ -17,6 +17,10 @@
         <item name="keyTextStyle">normal</item>
         <item name="keyTextColor">#FFE8EAED</item>
         <item name="hintTextColor">#FF9AA0A6</item>
+        <!-- show the first long-press character as a hint at the top-right of the key -->
+        <item name="hintTextSize">@dimen/key_hint_text_size</item>
+        <item name="hintLabelVAlign">top</item>
+        <item name="hintLabelAlign">right</item>
         <item name="labelTextSize">@dimen/key_label_text_size</item>
 
         <!-- flat material look: no text shadow -->
