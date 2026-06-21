@@ -309,6 +309,13 @@ public abstract class AnySoftKeyboardWithQuickText extends AnySoftKeyboardMediaI
         actualInputView.getPaddingBottom(),
         getSupportedMediaTypesForInput());
 
+    // Bound the panel to the keyboard height so the (now vertical) emoji grid scrolls internally
+    // instead of expanding to its full content and pushing the bottom action strip off-screen.
+    final int keyboardHeight = actualInputView.getHeight();
+    if (keyboardHeight > 0 && quickTextsLayout.getLayoutParams() != null) {
+      quickTextsLayout.getLayoutParams().height = keyboardHeight;
+    }
+
     actualInputView.setVisibility(View.GONE);
     inputViewContainer.addView(quickTextsLayout);
   }
