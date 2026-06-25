@@ -24,8 +24,7 @@ public class GifSourceConfigStoreTest {
   }
 
   private static GifSourceConfig giphy(String id, String label, boolean enabled) {
-    return new GifSourceConfig(
-        id, GifSourceType.GIPHY, label, enabled, "", "key-" + id, "", "");
+    return new GifSourceConfig(id, GifSourceType.GIPHY, label, enabled, "", "key-" + id, "", "");
   }
 
   @Test
@@ -79,8 +78,7 @@ public class GifSourceConfigStoreTest {
   @Test
   public void testGetEnabledInOrderFiltersDisabledButKeepsOrder() {
     mStore.save(
-        Arrays.asList(
-            giphy("a", "A", true), giphy("b", "B", false), giphy("c", "C", true)));
+        Arrays.asList(giphy("a", "A", true), giphy("b", "B", false), giphy("c", "C", true)));
 
     final List<GifSourceConfig> enabled = mStore.getEnabledInOrder();
     Assert.assertEquals(2, enabled.size());

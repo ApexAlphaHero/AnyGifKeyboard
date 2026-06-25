@@ -347,8 +347,6 @@ public abstract class AnySoftKeyboardWithQuickText extends AnySoftKeyboardMediaI
       exitGifSearchInputMode();
       return true;
     }
-    return super.handleCloseRequest()
-        || cleanUpQuickTextKeyboard(true)
-        || cleanUpGifPanel(true);
+    return super.handleCloseRequest() || cleanUpQuickTextKeyboard(true) || cleanUpGifPanel(true);
   }
 }

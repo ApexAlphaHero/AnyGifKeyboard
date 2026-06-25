@@ -150,8 +150,7 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     ((ImageView) findViewById(R.id.quick_keys_popup_close)).setImageDrawable(mCloseKeyboardIcon);
     ((ImageView) findViewById(R.id.quick_keys_popup_backspace)).setImageDrawable(mBackspaceIcon);
     // Show a clear "GIF" glyph (tinted to the theme color) for the media/GIF insertion button.
-    final ImageView mediaInsertButton =
-        findViewById(R.id.quick_keys_popup_quick_keys_insert_media);
+    final ImageView mediaInsertButton = findViewById(R.id.quick_keys_popup_quick_keys_insert_media);
     mediaInsertButton.setImageResource(R.drawable.ic_quick_text_gif);
     mediaInsertButton.setImageTintList(mTabTitleTextColor);
     clearEmojiHistoryIcon.setImageDrawable(mDeleteRecentlyUsedDrawable);

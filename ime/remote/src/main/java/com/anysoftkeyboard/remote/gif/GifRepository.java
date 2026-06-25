@@ -13,8 +13,8 @@ import java.util.Map;
 
 /**
  * Queries the user's enabled GIF sources in priority order and returns the first source that yields
- * results. A source that returns nothing, errors, or times out is skipped and the next is tried;
- * if every source comes up empty the result list is empty.
+ * results. A source that returns nothing, errors, or times out is skipped and the next is tried; if
+ * every source comes up empty the result list is empty.
  *
  * <p>All methods are synchronous and meant to run off the main thread (the search activity wraps
  * them in an Rx background call).

@@ -8,7 +8,9 @@ import com.anysoftkeyboard.remote.gif.config.GifSourceConfigStore;
 import com.anysoftkeyboard.remote.gif.net.HttpTransport;
 import com.anysoftkeyboard.remote.gif.net.UrlConnectionHttpTransport;
 
-/** Builds a {@link GifSource} from a {@link GifSourceConfig}. Add a case here for new source types. */
+/**
+ * Builds a {@link GifSource} from a {@link GifSourceConfig}. Add a case here for new source types.
+ */
 public class GifSourceFactory {
 
   private final HttpTransport mTransport;

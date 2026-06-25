@@ -46,7 +46,8 @@ public class GipheryGifSourceTest {
     Assert.assertEquals(1, results.size());
     Assert.assertEquals(
         "https://gifs.example.com/api/v1/gifs/uuid1/raw", results.get(0).getFullGifUrl());
-    Assert.assertEquals("Bearer good-token", transport.requestedHeaders.get(0).get("Authorization"));
+    Assert.assertEquals(
+        "Bearer good-token", transport.requestedHeaders.get(0).get("Authorization"));
     Assert.assertTrue(transport.requestedUrls.get(0).contains("q=dogs"));
   }
 
@@ -90,8 +91,7 @@ public class GipheryGifSourceTest {
   @Test
   public void testEmptyBaseUrlReturnsEmpty() throws IOException {
     final GifSourceConfig config =
-        new GifSourceConfig(
-            "g", GifSourceType.GIPHERY, "x", true, "", "", "tok", "ref");
+        new GifSourceConfig("g", GifSourceType.GIPHERY, "x", true, "", "", "tok", "ref");
     final FakeHttpTransport transport =
         new FakeHttpTransport(
             (method, url, headers, body) -> {

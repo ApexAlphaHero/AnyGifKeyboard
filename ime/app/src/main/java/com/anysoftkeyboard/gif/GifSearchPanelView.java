@@ -205,7 +205,9 @@ public class GifSearchPanelView extends LinearLayout {
     showMessage(getResources().getString(R.string.gif_search_inserting));
 
     mDownloadDisposable =
-        Single.fromCallable(() -> GifCache.save(getAppContext(), source.downloadFullGif(result), result.getId()))
+        Single.fromCallable(
+                () ->
+                    GifCache.save(getAppContext(), source.downloadFullGif(result), result.getId()))
             .subscribeOn(RxSchedulers.background())
             .observeOn(RxSchedulers.mainThread())
             .subscribe(this::onGifReady, this::onDownloadError);

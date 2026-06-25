@@ -107,7 +107,9 @@ public class GifSourceConfig {
     return json;
   }
 
-  /** Parses a config object; returns {@code null} for an unknown/invalid type so callers skip it. */
+  /**
+   * Parses a config object; returns {@code null} for an unknown/invalid type so callers skip it.
+   */
   @Nullable
   public static GifSourceConfig fromJson(@NonNull JSONObject json) {
     final GifSourceType type;

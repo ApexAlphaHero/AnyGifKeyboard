@@ -3,7 +3,7 @@
 This fork (**AnyGifKeyboard**) adds in-keyboard GIF search and insertion. GIF
 **sources are a user-maintained, reorderable list** in settings. Each source is
 queried in priority order until one returns results, so the user controls both
-*which* providers are used and *which wins first*.
+_which_ providers are used and _which wins first_.
 
 Two source types ship initially:
 
@@ -88,7 +88,7 @@ ARCHITECTURE.md:
 
 - **Search:** `GET /api/v1/gifs?q={query}&limit={n}&cursor={cursor}`
   → `{ "items": [ { "id", "mime_type", "width", "height", "tags",
-  "raw_url": "/api/v1/gifs/{id}/raw", ... } ], "next_cursor": ... }`
+"raw_url": "/api/v1/gifs/{id}/raw", ... } ], "next_cursor": ... }`
 - **Raw bytes:** `GET /api/v1/gifs/{id}/raw` → `image/gif` binary.
 - **Auth:** `Authorization: Bearer <access JWT>` on every call. Access tokens are
   short-lived (~15 min); refresh via `POST /auth/refresh` (rotating refresh
@@ -104,7 +104,7 @@ transparently refreshes the access token on `401`, and surfaces a clear
 - **Search:** `GET https://api.giphy.com/v1/gifs/search?api_key={API_KEY}&q={query}&limit={n}&rating=g`.
 - Response: `data[]` with `images.fixed_width.url` (or `preview_gif.url`) → preview
   and `images.original.url` → full GIF.
-- Requires a GIPHY **API** key (the REST key — *not* the Android SDK; see the note
+- Requires a GIPHY **API** key (the REST key — _not_ the Android SDK; see the note
   at the top), entered per-source in settings.
 - GIPHY image URLs are public CDN links, so raw download needs no auth header.
 
@@ -122,7 +122,7 @@ Each `GifResult` carries its originating `sourceId` so the UI can badge which
 source a GIF came from, and so download uses the right transport (giphery needs
 the bearer header; GIPHY URLs are public CDN links needing none).
 
-> Default behavior is *first non-empty wins* (true priority). A future "merge all
+> Default behavior is _first non-empty wins_ (true priority). A future "merge all
 > enabled sources" toggle is possible but out of scope for v1.
 
 ## Settings — the GIF sources list (`:ime:prefs`)
@@ -131,7 +131,7 @@ A new **"GIF sources"** screen, opened from the keyboard settings. It is a
 `RecyclerView` list (not a static `PreferenceScreen`) because rows are
 user-managed and reorderable:
 
-- **Reorder** — drag handle per row via `ItemTouchHelper`; row order *is* the
+- **Reorder** — drag handle per row via `ItemTouchHelper`; row order _is_ the
   search priority. Persisted on drop.
 - **Enable/disable** — a switch per row; disabled sources are skipped by
   `GifRepository` but kept in the list.

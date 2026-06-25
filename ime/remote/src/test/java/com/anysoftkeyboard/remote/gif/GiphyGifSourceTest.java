@@ -18,14 +18,14 @@ public class GiphyGifSourceTest {
           + "}}]}";
 
   private static GifSourceConfig config(String apiKey) {
-    return new GifSourceConfig(
-        "giphy-1", GifSourceType.GIPHY, "GIPHY", true, "", apiKey, "", "");
+    return new GifSourceConfig("giphy-1", GifSourceType.GIPHY, "GIPHY", true, "", apiKey, "", "");
   }
 
   @Test
   public void testSearchMapsImages() throws Exception {
     final FakeHttpTransport transport =
-        new FakeHttpTransport((method, url, headers, body) -> FakeHttpTransport.response(200, SEARCH_JSON));
+        new FakeHttpTransport(
+            (method, url, headers, body) -> FakeHttpTransport.response(200, SEARCH_JSON));
     final GiphyGifSource source = new GiphyGifSource(config("key"), transport);
 
     final List<GifResult> results = source.search("cats", 25);

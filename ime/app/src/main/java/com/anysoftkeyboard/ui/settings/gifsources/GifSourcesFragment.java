@@ -156,9 +156,7 @@ public class GifSourcesFragment extends Fragment implements GifSourcesAdapter.Li
     final AlertDialog.Builder builder =
         new AlertDialog.Builder(requireContext())
             .setTitle(
-                existing == null
-                    ? R.string.gif_source_add_title
-                    : R.string.gif_source_edit_title)
+                existing == null ? R.string.gif_source_add_title : R.string.gif_source_edit_title)
             .setView(form)
             .setPositiveButton(
                 R.string.gif_source_save,
@@ -194,9 +192,7 @@ public class GifSourcesFragment extends Fragment implements GifSourcesAdapter.Li
       @NonNull String refreshToken,
       @NonNull String apiKey) {
     final GifSourceType type =
-        checkedTypeId == R.id.gif_source_type_giphery
-            ? GifSourceType.GIPHERY
-            : GifSourceType.GIPHY;
+        checkedTypeId == R.id.gif_source_type_giphery ? GifSourceType.GIPHERY : GifSourceType.GIPHY;
     final String id = existing != null ? existing.getId() : UUID.randomUUID().toString();
     final String resolvedLabel = label.isEmpty() ? type.name() : label;
     final boolean enabled = existing == null || existing.isEnabled();

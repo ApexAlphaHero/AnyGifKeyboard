@@ -15,24 +15,24 @@ AI agents — can navigate it quickly. For build/lint/test/commit rules see
 
 Two build systems coexist; pick by what you are touching.
 
-| System | Builds | Notes |
-| ------ | ------ | ----- |
-| **Gradle** (AGP 8.13.2, Kotlin 2.3.21, Java 21) | All Android code: `/ime/*`, `/addons/*`, `/api` | Use `assembleDebug`, **never** the `build` task. Module tests via `./gradlew :path:to:module:testDebugUnitTest`. |
-| **Bazel** (bzlmod) | TypeScript tooling under `/js`, the Java emoji generators under `/emojis`, repo-wide format | `bazel test //...`, `bazel run //:format`. |
+| System                                          | Builds                                                                                      | Notes                                                                                                            |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Gradle** (AGP 8.13.2, Kotlin 2.3.21, Java 21) | All Android code: `/ime/*`, `/addons/*`, `/api`                                             | Use `assembleDebug`, **never** the `build` task. Module tests via `./gradlew :path:to:module:testDebugUnitTest`. |
+| **Bazel** (bzlmod)                              | TypeScript tooling under `/js`, the Java emoji generators under `/emojis`, repo-wide format | `bazel test //...`, `bazel run //:format`.                                                                       |
 
 Android formatting/lint also runs through `./gradlew spotlessApply`. Auto-fixers
 own formatting — don't hand-fix it.
 
 ## Top-level layout
 
-| Path | Purpose |
-| ---- | ------- |
-| `/ime` | The keyboard app and its feature libraries (see below). |
-| `/api` | Tiny public SDK shared with add-on APKs: `KeyCodes`, `MediaInsertion` intent contract. |
-| `/addons` | Separately-packaged APKs: `languages/` (~50 packs), `themes/`, `quicktexts/` (emoji/quick-text). Each is a `pack` + `apk` pair discovered at runtime via broadcast. |
-| `/emojis` | Bazel Java tools that generate emoji keyboard XML from Unicode data. |
-| `/js` | Bazel TypeScript CI tooling (localization, dictionary updates, checkers). |
-| `/gradle`, `/buildSrc`, `/tools`, `/config`, `/scripts` | Build config, custom Gradle plugins, lint/checkstyle config, CI scripts. |
+| Path                                                    | Purpose                                                                                                                                                             |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/ime`                                                  | The keyboard app and its feature libraries (see below).                                                                                                             |
+| `/api`                                                  | Tiny public SDK shared with add-on APKs: `KeyCodes`, `MediaInsertion` intent contract.                                                                              |
+| `/addons`                                               | Separately-packaged APKs: `languages/` (~50 packs), `themes/`, `quicktexts/` (emoji/quick-text). Each is a `pack` + `apk` pair discovered at runtime via broadcast. |
+| `/emojis`                                               | Bazel Java tools that generate emoji keyboard XML from Unicode data.                                                                                                |
+| `/js`                                                   | Bazel TypeScript CI tooling (localization, dictionary updates, checkers).                                                                                           |
+| `/gradle`, `/buildSrc`, `/tools`, `/config`, `/scripts` | Build config, custom Gradle plugins, lint/checkstyle config, CI scripts.                                                                                            |
 
 ## The IME application (`/ime`)
 
@@ -54,16 +54,16 @@ Main class: [AnySoftKeyboard.java](ime/app/src/main/java/com/anysoftkeyboard/Any
 
 ### Key `/ime` modules
 
-| Module | Role |
-| ------ | ---- |
-| `:ime:app` | The keyboard itself: service chain, keyboard views, suggestions, quick-text UI. |
-| `:ime:base` / `:ime:base-rx` | Core keyboard infra and RxJava2 wrappers. |
-| `:ime:base-test` | Robolectric test helpers (`AnySoftKeyboardRobolectricTestRunner`). |
-| `:ime:remote` | **Media-insertion provider side** — picker activity + broadcast bridge (see below). |
-| `:ime:fileprovider` | `LocalProxy`: copies a remote `Uri` into an app-private FileProvider `content://` Uri. |
-| `:ime:addons` | Runtime discovery/loading of add-on APKs. |
-| `:ime:dictionaries`, `:ime:nextword`, `:ime:gesturetyping` | Prediction, next-word, swipe typing. |
-| `:ime:voiceime`, `:ime:overlay`, `:ime:prefs`, `:ime:pixel`, `:ime:chewbacca`, `:ime:notification`, `:ime:permissions`, `:ime:releaseinfo` | Voice input, theme overlay, settings UI, device-specific bits, etc. |
+| Module                                                                                                                                     | Role                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| `:ime:app`                                                                                                                                 | The keyboard itself: service chain, keyboard views, suggestions, quick-text UI.        |
+| `:ime:base` / `:ime:base-rx`                                                                                                               | Core keyboard infra and RxJava2 wrappers.                                              |
+| `:ime:base-test`                                                                                                                           | Robolectric test helpers (`AnySoftKeyboardRobolectricTestRunner`).                     |
+| `:ime:remote`                                                                                                                              | **Media-insertion provider side** — picker activity + broadcast bridge (see below).    |
+| `:ime:fileprovider`                                                                                                                        | `LocalProxy`: copies a remote `Uri` into an app-private FileProvider `content://` Uri. |
+| `:ime:addons`                                                                                                                              | Runtime discovery/loading of add-on APKs.                                              |
+| `:ime:dictionaries`, `:ime:nextword`, `:ime:gesturetyping`                                                                                 | Prediction, next-word, swipe typing.                                                   |
+| `:ime:voiceime`, `:ime:overlay`, `:ime:prefs`, `:ime:pixel`, `:ime:chewbacca`, `:ime:notification`, `:ime:permissions`, `:ime:releaseinfo` | Voice input, theme overlay, settings UI, device-specific bits, etc.                    |
 
 ### Keyboard views & input
 
@@ -118,7 +118,7 @@ docked in the keyboard container — exactly like the emoji panel. The panel
 searches the user's sources (networking off the main thread), downloads the
 chosen GIF to the app-private `media/` folder, and commits it via
 `AnySoftKeyboardMediaInsertion.commitGifContent()` → `commitContent()`. So GIF
-search reuses the *commit* end of the pipeline but bypasses the remote-provider
+search reuses the _commit_ end of the pipeline but bypasses the remote-provider
 hop. See [docs/gif-insertion.md](docs/gif-insertion.md).
 
 ## Add-on model (`/addons`)

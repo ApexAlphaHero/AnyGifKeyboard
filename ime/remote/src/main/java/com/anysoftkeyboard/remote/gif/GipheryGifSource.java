@@ -55,8 +55,7 @@ public class GipheryGifSource implements GifSource {
   public List<GifResult> search(@NonNull String query, int limit) throws IOException {
     if (mBaseUrl.isEmpty()) return new ArrayList<>();
 
-    final String url =
-        mBaseUrl + "/api/v1/gifs?q=" + Uri.encode(query) + "&limit=" + limit;
+    final String url = mBaseUrl + "/api/v1/gifs?q=" + Uri.encode(query) + "&limit=" + limit;
     final HttpTransport.HttpResponse response = authorizedGet(url);
     if (!response.isSuccessful()) {
       throw new IOException("giphery search failed with HTTP " + response.code());
