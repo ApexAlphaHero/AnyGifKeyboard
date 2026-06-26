@@ -18,7 +18,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@actions/core": "^2.0.3",
-    "@actions/github": "^6.0.1",
+    "@actions/github": "^9.1.1",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
     "@langchain/core": "^1.1.43",
