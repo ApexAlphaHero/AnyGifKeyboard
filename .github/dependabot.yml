@@ -1,0 +1,42 @@
+---
+# Dependabot version-update config for the AnyGifKeyboard fork.
+# Renovate (inherited from upstream) needs an org bot token this fork lacks, so
+# Dependabot is the active dependency updater here. Enable Dependabot security
+# alerts in the repo Settings -> Code security to also get security PRs.
+version: 2
+updates:
+  # Android / Gradle dependencies (build.gradle + gradle/libs.versions.toml)
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      gradle-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # GitHub Actions used by the workflows in .github/workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        update-types:
+          - minor
+          - patch
+
+  # JS tooling (package.json + pnpm-lock.yaml) used by the Bazel/TS pipeline
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
