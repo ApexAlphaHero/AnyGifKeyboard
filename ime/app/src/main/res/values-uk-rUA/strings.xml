@@ -539,7 +539,7 @@
     <string name="next_word_dict_settings">Налаштування наступного слова</string>
     <string name="next_word_settings_group">Налаштування</string>
     <string name="next_word_stats_group">Використовувати статистику Наступного слово</string>
-    <string name="next_words_statistics_count">Початкова кількість слів: \u0020 <xliff:g id="first_word">%d </xliff:g> \nСередня кількість наступних слів: \u0020 <xliff:g id="second_word"> %d </xliff:g></string>
+    <string name="next_words_statistics_count">Початкова кількість слів: \u0020 <xliff:g id="first_word">%1$d </xliff:g> \nСередня кількість наступних слів: \u0020 <xliff:g id="second_word"> %d </xliff:g></string>
     <string name="next_words_statistics_no_usage">Немає використання. Введіть трохи більше.</string>
     <string name="clipboard_is_empty_toast">Буфер обміну пустий, немає нічого, щоб вставити.</string>
     <string name="clipboard_copy_done_toast">Виділений текст скопійовано в буфер обміну.</string>

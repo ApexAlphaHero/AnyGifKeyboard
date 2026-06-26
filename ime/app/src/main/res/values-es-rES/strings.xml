@@ -556,7 +556,7 @@
     <string name="next_word_dict_settings">Configuración de palabras sugeridas</string>
     <string name="next_word_settings_group">Configuración</string>
     <string name="next_word_stats_group">Estadísticas de uso de palabras sugeridas</string>
-    <string name="next_words_statistics_count">Cantidad inicial de palabras: \u0020<xliff:g id="first_word">%d</xliff:g>\nPromedio de palabras sugeridas: \u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Cantidad inicial de palabras: \u0020<xliff:g id="first_word">%1$d</xliff:g>\nPromedio de palabras sugeridas: \u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">No hay uso todavía. Escribe un poco más.</string>
     <string name="clipboard_is_empty_toast">El portapapeles está vacío, no hay nada que pegar.</string>
     <string name="clipboard_copy_done_toast">Texto seleccionado copiado al portapapeles.</string>

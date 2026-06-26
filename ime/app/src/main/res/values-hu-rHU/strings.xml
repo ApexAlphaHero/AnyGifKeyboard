@@ -632,7 +632,7 @@
     <string name="next_word_dict_settings">Következő szó javaslatok beállításai</string>
     <string name="next_word_settings_group">Beállítások</string>
     <string name="next_word_stats_group">Használati statisztika</string>
-    <string name="next_words_statistics_count">Első szavak száma:\u0020<xliff:g id="first_word">%d</xliff:g>\nKövető szavak átlagos száma:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Első szavak száma:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nKövető szavak átlagos száma:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Még nincs. Írjon be egy kicsit többet.</string>
     <string name="clipboard_is_empty_toast">A vágólap üres, nincs mit beilleszteni.</string>
     <string name="clipboard_copy_done_toast">A kijelölt szöveg vágólapra másolva.</string>

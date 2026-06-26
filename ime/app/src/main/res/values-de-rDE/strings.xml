@@ -559,7 +559,7 @@
     <string name="next_word_dict_settings">Wortvorhersageeinstellungen</string>
     <string name="next_word_settings_group">Einstellungen</string>
     <string name="next_word_stats_group">Wortvorhersage Nutzungsstatistiken</string>
-    <string name="next_words_statistics_count">Anfängliche Wortanzahl:\u0020<xliff:g id="first_word">%d</xliff:g>\nDurchnittliche Anzahl der Wortvorhersage:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Anfängliche Wortanzahl:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nDurchnittliche Anzahl der Wortvorhersage:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Keine Verwendung bisher. Tippe ein bisschen mehr.</string>
     <string name="clipboard_is_empty_toast">Zwischenablage ist leer, es gibt nichts einzufügen.</string>
     <string name="clipboard_copy_done_toast">Markierten Text in die Zwischenablage kopiert.</string>

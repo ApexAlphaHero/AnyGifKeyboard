@@ -27,8 +27,8 @@
     <string name="default_values_keyboard_theme_name">Default Values Theme</string>
     <string name="fallback_keyboard_theme_id">2a94cf8c-266c-47fd-8c8c-c9c57d28d7dc</string>
 
-    <string name="version_text">Version\u0020<xliff:g id="version_name">%s</xliff:g>,\u0020version-code <xliff:g id="version_number">%d</xliff:g>.</string>
-    <string name="quick_text_tab_title_template"><xliff:g id="first_key">%s</xliff:g>\u0020<xliff:g id="name">%s</xliff:g></string>
+    <string name="version_text">Version\u0020<xliff:g id="version_name">%1$s</xliff:g>,\u0020version-code <xliff:g id="version_number">%2$d</xliff:g>.</string>
+    <string name="quick_text_tab_title_template"><xliff:g id="first_key">%1$s</xliff:g>\u0020<xliff:g id="name">%2$s</xliff:g></string>
 
     <string name="about_copyright_text">Copyright\u0020©\u0020<xliff:g id="year">%d</xliff:g>\u0020Menny Even-Danan</string>
     <string name="main_site_url">https://anysoftkeyboard.github.io/</string>

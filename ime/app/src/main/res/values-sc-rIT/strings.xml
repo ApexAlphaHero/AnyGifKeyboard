@@ -569,7 +569,7 @@
     <string name="next_word_dict_settings">Impostatziones paràula imbeniente</string>
     <string name="next_word_settings_group">Impostatziones</string>
     <string name="next_word_stats_group">Istatìsticas de impreu de sa paràula imbeniente</string>
-    <string name="next_words_statistics_count">Nùmeru initziale de paràulas:\u0020<xliff:g id="first_word">%d</xliff:g>\nNùmeru mèdiu de sa paràula imbeniente:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Nùmeru initziale de paràulas:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nNùmeru mèdiu de sa paràula imbeniente:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Galu perunu impreu. Iscrie unu pagu de prus.</string>
     <string name="clipboard_is_empty_toast">Sos apuntos sunt bòidos, non b\'est nudda de incollare.</string>
     <string name="clipboard_copy_done_toast">Testu ischertadu copiadu in sos apuntos.</string>

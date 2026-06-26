@@ -568,7 +568,7 @@
     <string name="next_word_dict_settings">Kito žodžio parametrai</string>
     <string name="next_word_settings_group">Parametrai</string>
     <string name="next_word_stats_group">Kito žodžio naudojimo statistika</string>
-    <string name="next_words_statistics_count">Pradinio žodžio skaičius:\u0020<xliff:g id="first_word">%d</xliff:g>\nVidutinis kito žodžio skaičius:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Pradinio žodžio skaičius:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nVidutinis kito žodžio skaičius:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Jokio naudojimo dar. Parašykite šiek tiek daugiau.</string>
     <string name="clipboard_is_empty_toast">Iškarpinė tuščia, nėra ko įklijuoti.</string>
     <string name="clipboard_copy_done_toast">Pažymėtas tekstas nukopijuotas į iškarpinę.</string>

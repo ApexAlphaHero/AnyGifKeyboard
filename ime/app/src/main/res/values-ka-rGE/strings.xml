@@ -672,7 +672,7 @@
     <string name="next_word_dict_settings">მომდევნო სიტყვის პარამეტრები</string>
     <string name="next_word_settings_group">პარამეტრები</string>
     <string name="next_word_stats_group">მომდევნო სიტყვის გამოყენების აღრიცხვები</string>
-    <string name="next_words_statistics_count">საწყისი სიტყვის ოდენობა:\u0020<xliff:g id="first_word">%d</xliff:g>\nმომდევნო სიტყვის საშუალო ოდენობა:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">საწყისი სიტყვის ოდენობა:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nმომდევნო სიტყვის საშუალო ოდენობა:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">ჯერ არაა. ცოტა მეტი აკრიფეთ.</string>
     <string name="clipboard_is_empty_toast">ასლი არაა აღებული, ვერაფერი ჩაისმება.</string>
     <string name="clipboard_copy_done_toast">მონიშნული ტექსტის ასლი აღებულია.</string>

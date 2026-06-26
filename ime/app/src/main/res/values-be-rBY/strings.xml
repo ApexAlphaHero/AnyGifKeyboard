@@ -569,7 +569,7 @@
     <string name="next_word_dict_settings">Налады наступнага слова</string>
     <string name="next_word_settings_group">Налады</string>
     <string name="next_word_stats_group">Статыстыка выкарыстання наступнага слова</string>
-    <string name="next_words_statistics_count">Пачатковая колькасць слоў:\u0020<xliff:g id="first_word">%d</xliff:g>\nСярэдняя колькасць наступных слоў:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Пачатковая колькасць слоў:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nСярэдняя колькасць наступных слоў:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Не выкарыстоўваецца. Надрукуйце крыху больш.</string>
     <string name="clipboard_is_empty_toast">Буфер абмену пусты, адсутнічаюць элементы для ўстаўкі.</string>
     <string name="clipboard_copy_done_toast">Вылучаны тэкст скапіяваны ў буфер абмену.</string>

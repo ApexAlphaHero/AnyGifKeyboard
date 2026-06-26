@@ -514,7 +514,7 @@
     <string name="next_word_dict_settings">Nastavení doporučování dalšího slova</string>
     <string name="next_word_settings_group">Nastavení</string>
     <string name="next_word_stats_group">Statistiky doporučování dalšího slova</string>
-    <string name="next_words_statistics_count">Počet počátečních slov:\u0020<xliff:g id="first_word">%d</xliff:g>\nPrůměrný počet dalších slov:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Počet počátečních slov:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nPrůměrný počet dalších slov:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Zatím nic. Pište dál.</string>
     <string name="clipboard_is_empty_toast">Schránka je prázdná, není co vložit.</string>
     <string name="clipboard_copy_done_toast">Vybraný text byl zkopírován do schránky.</string>

@@ -658,7 +658,7 @@ Zmiana
     <string name="next_word_dict_settings">Kolejne słowo - ustawienia</string>
     <string name="next_word_settings_group">Ustawienia</string>
     <string name="next_word_stats_group">Statystyki użycia kolejnego słowa</string>
-    <string name="next_words_statistics_count">Liczba początkowych słów:\u0020<xliff:g id="first_word">%d</xliff:g>\nŚrednia liczba następnych słów:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Liczba początkowych słów:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nŚrednia liczba następnych słów:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Brak użycia. Napisz nieco więcej.</string>
     <string name="clipboard_is_empty_toast">Nie ma co wkleić - schowek jest pusty.</string>
     <string name="clipboard_copy_done_toast">Skopiowano zaznaczony tekst do schowka.</string>

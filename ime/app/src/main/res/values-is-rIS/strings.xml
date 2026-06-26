@@ -644,7 +644,7 @@
     <string name="next_word_dict_settings">Stillingar næsta orðs</string>
     <string name="next_word_settings_group">Stillingar</string>
     <string name="next_word_stats_group">Tölfræði notkunar nýrra orða</string>
-    <string name="next_words_statistics_count">Upphaflegur orðafjöldi:\u0020<xliff:g id="first_word">%d</xliff:g>\nMeðalfjöldi nýrra orða:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Upphaflegur orðafjöldi:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nMeðalfjöldi nýrra orða:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Ekki nóg notkunargögn. Skrifaðu aðeins meira.</string>
     <string name="clipboard_is_empty_toast">Klippispjaldið er tómt, það er ekkert til að líma.</string>
     <string name="clipboard_copy_done_toast">Valinn texti afritaður á klippispjald.</string>

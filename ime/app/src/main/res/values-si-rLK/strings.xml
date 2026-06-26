@@ -643,7 +643,7 @@
     <string name="next_word_dict_settings">ඊළඟ වචන සැකසුම්</string>
     <string name="next_word_settings_group">සැකසුම්</string>
     <string name="next_word_stats_group">ඊළඟ වචන භාවිත සංඛ්‍යාලේඛන</string>
-    <string name="next_words_statistics_count">ආරම්භක වචන ගණන:\u0020<xliff:g id="first_word">%d</xliff:g>\nසාමාන්‍ය ඊළඟ වචන ගණන:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">ආරම්භක වචන ගණන:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nසාමාන්‍ය ඊළඟ වචන ගණන:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">තවමත් භාවිතයක් නොමැත. තව ටිකක් ටයිප් කරන්න.</string>
     <string name="clipboard_is_empty_toast">පසුරු පුවරුව හිස්ය, ඇලවීමට කිසිවක් නැත.</string>
     <string name="clipboard_copy_done_toast">තෝරාගත් පෙළ පසුරු පුවරුවට පිටපත් කරන ලදී.</string>

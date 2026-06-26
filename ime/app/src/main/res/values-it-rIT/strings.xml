@@ -557,7 +557,7 @@
     <string name="next_word_dict_settings">Impostazioni di Prossima Parola</string>
     <string name="next_word_settings_group">Impostazioni</string>
     <string name="next_word_stats_group">Statistiche di utilizzo di Prossima Parola</string>
-    <string name="next_words_statistics_count">Conteggio parola iniziale:\u0020<xliff:g id="first_word">%d</xliff:g>\nConteggio medio parola successiva:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Conteggio parola iniziale:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nConteggio medio parola successiva:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Ancora nessun utilizzo. Scrivi un po\' di più.</string>
     <string name="clipboard_is_empty_toast">Appunti vuoti: non c\'è niente da incollare.</string>
     <string name="clipboard_copy_done_toast">Testo selezionato copiato negli Appunti.</string>

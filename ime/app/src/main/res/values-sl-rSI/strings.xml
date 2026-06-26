@@ -452,7 +452,7 @@
     <string name="next_word_dict_settings">Nastavitve za naslednjo besedo</string>
     <string name="next_word_settings_group">Nastavitve</string>
     <string name="next_word_stats_group">Statistika uporabe naslednje besede</string>
-    <string name="next_words_statistics_count">Št. začetnih besed:\u0020<xliff:g id="first_word">%d</xliff:g>\nPovprečno št. naslednjih besed:\u0020<xliff:g id="second_word">%d</xliff:g></string>
+    <string name="next_words_statistics_count">Št. začetnih besed:\u0020<xliff:g id="first_word">%1$d</xliff:g>\nPovprečno št. naslednjih besed:\u0020<xliff:g id="second_word">%2$d</xliff:g></string>
     <string name="next_words_statistics_no_usage">Ni še uporabe. Tipkajte malo več.</string>
     <string name="clipboard_is_empty_toast">Odložišče je prazno, ničesar ni za prilepiti.</string>
     <string name="clipboard_copy_done_toast">Izbrano besedilo kopirano na odložišče.</string>
