@@ -1,12 +1,9 @@
 ---
 name: packs-lists
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'addons/**'
-      - '.github/workflows/packs_md_update.yml'
+  # Fork: upstream-only automation (regenerates addons PACKS.md and pushes). Disabled
+  # on this fork to avoid failing/noisy runs. Manual run only.
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

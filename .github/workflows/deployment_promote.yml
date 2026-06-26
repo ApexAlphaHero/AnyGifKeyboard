@@ -1,8 +1,9 @@
 ---
 name: deployment-promote
 on:
-  schedule:
-    - cron: '04 04 * * *'
+  # Fork: upstream-only automation (promotes upstream release branches). Disabled
+  # on this fork - cannot pass without upstream deploy secrets. Manual run only.
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

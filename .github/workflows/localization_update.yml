@@ -2,18 +2,9 @@
 name: localization
 # always run on the default branch: main
 on:
-  # schedule is used to fetch new, async, translations
-  schedule:
-    - cron: '24 02 * * 1,4'
-  # push is used to upload new system strings
-  push:
-    branches:
-      - main
-    paths:
-      - '**/res/values/strings.xml'
-      - '.github/workflows/localization_update.yml'
-      - 'js/localization_tools/**'
-      - 'crowdin.yml'
+  # Fork: upstream-only automation (Crowdin sync). Disabled on this fork - cannot
+  # pass without upstream Crowdin secrets. Manual run only.
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

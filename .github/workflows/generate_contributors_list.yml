@@ -1,9 +1,9 @@
 ---
 name: contributors-lists
 on:
-  push:
-    branches:
-      - main
+  # Fork: upstream-only automation (regenerates CONTRIBUTORS.md and pushes). Disabled
+  # on this fork to avoid failing/noisy runs. Manual run only.
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
