@@ -460,7 +460,7 @@
     <string name="next_word_dict_settings">Sa susunod na setings ng salita</string>
     <string name="next_word_settings_group">Mga settings</string>
     <string name="next_word_stats_group">Istatistika sa susunod na salitang ginagamit</string>
-    <string name="next_words_statistics_count">Paunang salita ang count: \u0020 <xliff:g id="first_word">%1$d </xliff:g> \nAverage susunod word count: \u0020 <xliff:g id="second_word"> %d </xliff:g></string>
+    <string name="next_words_statistics_count">Paunang salita ang count: \u0020 <xliff:g id="first_word">%1$d </xliff:g> \nAverage susunod word count: \u0020 <xliff:g id="second_word"> %2$d </xliff:g></string>
     <string name="next_words_statistics_no_usage">Walang naggagamit pa. Mag-type pa ng kunti.</string>
     <string name="clipboard_is_empty_toast">Ang clipboard at walang laman, wala pwedeng mapaste dito.</string>
     <string name="clipboard_copy_done_toast">Ang piniling teksto ay kinopya sa clipboard.</string>

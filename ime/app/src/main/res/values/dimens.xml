@@ -82,7 +82,6 @@
     <dimen name="default_paddingBottom">0dp</dimen>
 
     <dimen name="comfortable_min_row_height">44dp</dimen>
-    <dimen name="quick_key_size">50dp</dimen>
 
     <dimen name="yochees_radius_key_corner">5dp</dimen>
     <dimen name="watermark_size">12sp</dimen>
