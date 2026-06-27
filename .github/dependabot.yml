@@ -16,7 +16,6 @@ updates:
         update-types:
           - minor
           - patch
-
   # GitHub Actions used by the workflows in .github/workflows
   - package-ecosystem: github-actions
     directory: /
@@ -28,7 +27,6 @@ updates:
         update-types:
           - minor
           - patch
-
   # JS tooling (package.json + pnpm-lock.yaml) used by the Bazel/TS pipeline
   - package-ecosystem: npm
     directory: /
