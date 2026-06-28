@@ -306,7 +306,9 @@ jobs:
           cat "${{ runner.temp }}/needs_context.json"
           bazel run //js/check_all_green -- --github_event_file "${{ runner.temp }}/needs_context.json"
   deploy-request:
-    if: github.event_name == 'push'
+    # Upstream-only: opens a GitHub Deployment against AnySoftKeyboard/AnySoftKeyboard
+    # using a bot token this fork does not have. Skip it on forks so checks stays green.
+    if: github.event_name == 'push' && github.repository == 'AnySoftKeyboard/AnySoftKeyboard'
     needs: [all-green-requirement]
     runs-on: ubuntu-24.04
     steps:
