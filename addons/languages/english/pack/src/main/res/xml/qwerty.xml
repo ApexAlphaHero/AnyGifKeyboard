@@ -8,8 +8,8 @@
          (when "show hint text" is enabled). -->
     <Row>
         <Key android:codes="113" android:popupCharacters="1" android:keyEdgeFlags="left"/>
-        <Key android:codes="119" android:popupCharacters="2"/>
-        <Key android:codes="101" android:popupCharacters="3èéêëēėę"/>
+        <Key android:codes="119" android:popupCharacters="2ŵω"/>
+        <Key android:codes="101" android:popupKeyboard="@xml/popup_qwerty_e"/>
         <Key android:codes="114" android:popupCharacters="4"/>
         <Key android:codes="116" android:popupCharacters="5"/>
         <Key android:codes="121" android:popupCharacters="6ýÿ"/>
