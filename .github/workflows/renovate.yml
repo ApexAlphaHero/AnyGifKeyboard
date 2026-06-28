@@ -22,13 +22,13 @@ jobs:
         with:
           token: ${{ secrets.BOT_MASTER_RW_GITHUB_TOKEN }}
       - name: Setup Bazel
-        uses: bazel-contrib/setup-bazel@0.18.0
+        uses: bazel-contrib/setup-bazel@0.19.0
         with:
           bazelisk-cache: true
           disk-cache: ${{ github.workflow }}
           repository-cache: true
       - name: Setup Java
-        uses: actions/setup-java@v5.2.0
+        uses: actions/setup-java@v5.4.0
         with:
           distribution: 'temurin'
           java-version: '21'
