@@ -14,7 +14,7 @@ jobs:
   packs-md-update:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v7.0.0
         with:
           token: ${{ secrets.BOT_MASTER_RW_GITHUB_TOKEN }}
       - uses: actions/setup-java@v5.4.0
@@ -48,7 +48,7 @@ jobs:
         run: ./gradlew :addons:languages:generatePacksYaml :addons:themes:generatePacksYaml :addons:quicktexts:generatePacksYaml
       - name: Checkout AnySoftKeyboard.github.io repository
         if: steps.create_pr_packs_md.outputs.pull-request-number != ''
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7.0.0
         with:
           repository: AnySoftKeyboard/AnySoftKeyboard.github.io
           path: anysoftkeyboard.github.io
