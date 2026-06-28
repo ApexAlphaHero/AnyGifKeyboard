@@ -59,7 +59,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - uses: android-actions/setup-android@v3.2.2
+      - uses: android-actions/setup-android@v4.0.1
         with:
           cmdline-tools-version: 13114758
       - name: Install NDK
@@ -94,7 +94,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - uses: android-actions/setup-android@v3.2.2
+      - uses: android-actions/setup-android@v4.0.1
         with:
           cmdline-tools-version: 13114758
       - name: Install NDK
@@ -165,7 +165,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - uses: android-actions/setup-android@v3.2.2
+      - uses: android-actions/setup-android@v4.0.1
         with:
           cmdline-tools-version: 13114758
       - name: Install NDK
@@ -232,7 +232,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - uses: android-actions/setup-android@v3.2.2
+      - uses: android-actions/setup-android@v4.0.1
         with:
           cmdline-tools-version: 13114758
       - name: Install NDK
