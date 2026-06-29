@@ -10,7 +10,7 @@ agp = "8.13.2"
 kotlin = "2.3.21"
 spotless = "8.5.1"
 playPublisher = "3.13.0"
-errorpronePlugin = "4.4.0"
+errorpronePlugin = "5.1.0"
 navigationSafeArgs = "2.9.8"
 
 # AndroidX Libraries
