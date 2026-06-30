@@ -9,7 +9,7 @@ sdkMinimum = "23"
 agp = "8.13.2"
 kotlin = "2.3.21"
 spotless = "8.5.1"
-playPublisher = "3.13.0"
+playPublisher = "4.0.0"
 errorpronePlugin = "5.1.0"
 navigationSafeArgs = "2.9.8"
 
