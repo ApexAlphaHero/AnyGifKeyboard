@@ -6,7 +6,7 @@ sdkCompile = "36"
 sdkMinimum = "23"
 
 # Android Gradle Plugin and Build Plugins
-agp = "8.13.2"
+agp = "9.2.1"
 kotlin = "2.3.21"
 spotless = "8.5.1"
 playPublisher = "3.13.0"
