@@ -67,7 +67,7 @@ gson = "2.14.0"
 httpclient = "4.5.14"
 kotlinReflect = "2.3.21"
 jsoup = "1.22.2"
-guava = "24.1.1-jre"
+guava = "33.6.0-jre"
 
 [libraries]
 # AndroidX
