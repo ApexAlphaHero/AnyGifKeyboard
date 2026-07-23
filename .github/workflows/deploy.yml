@@ -114,22 +114,22 @@ jobs:
           echo "VERSION_WITH_V=${VERSION_WITH_V}" >> $GITHUB_ENV
           TAG_NAME=$(echo "${VERSION_WITH_V}" | sed 's/^v//')
           echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
-      - uses: actions/download-artifact@v7.0.0
+      - uses: actions/download-artifact@v8.0.1
         if: endsWith(needs.deploy.outputs.deployment_environment, '_010')
         with:
           name: apks
           path: apks
-      - uses: actions/download-artifact@v7.0.0
+      - uses: actions/download-artifact@v8.0.1
         if: endsWith(needs.deploy.outputs.deployment_environment, '_010')
         with:
           name: bundles
           path: bundles
-      - uses: actions/download-artifact@v7.0.0
+      - uses: actions/download-artifact@v8.0.1
         if: endsWith(needs.deploy.outputs.deployment_environment, '_010')
         with:
           name: proguard-mapping
           path: proguard-mapping
-      - uses: actions/download-artifact@v7.0.0
+      - uses: actions/download-artifact@v8.0.1
         if: endsWith(needs.deploy.outputs.deployment_environment, '_010')
         with:
           name: fdroid-metadata
