@@ -12,9 +12,9 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       - name: AI Translation Review
-        uses: menny/cassandra@v0.6.0
+        uses: menny/cassandra@v0.7.0
         with:
           reviewer_github_token: ${{ secrets.AI_CODE_REVIEW_GH_TOKEN }}
           provider_api_key: ${{ secrets.GEMINI_2_5_FLASH_API_KEY }}

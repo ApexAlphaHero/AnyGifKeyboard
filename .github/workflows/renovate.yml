@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
         with:
           token: ${{ secrets.BOT_MASTER_RW_GITHUB_TOKEN }}
       - name: Setup Bazel
@@ -28,7 +28,7 @@ jobs:
           disk-cache: ${{ github.workflow }}
           repository-cache: true
       - name: Setup Java
-        uses: actions/setup-java@v5.4.0
+        uses: actions/setup-java@v5.7.0
         with:
           distribution: 'temurin'
           java-version: '21'
